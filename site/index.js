@@ -30,10 +30,10 @@ const mountedCallback = {
 };
 
 Vue.use(Vuex);
-Vue.use(mountedCallback);
-Vue.use(VueClipboard);
+Vue.use(mountedCallback);//
+Vue.use(VueClipboard);//剪贴板
 Vue.use(VueRouter);
-Vue.use(VueI18n);
+Vue.use(VueI18n);//要与国际化接轨233
 Vue.component(Md.name, Md);
 Vue.component(Api.name, Api);
 Vue.component('demo-box', demoBox);
@@ -52,6 +52,8 @@ const router = new VueRouter({
   fallback: false,
   routes,
 });
+
+//进度条
 router.beforeEach((to, from, next) => {
   if (to.path !== from.path) {
     NProgress.start();
